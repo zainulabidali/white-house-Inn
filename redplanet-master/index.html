@@ -1,36 +1,43 @@
 <!DOCTYPE HTML>
 <html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>White Houseinn &mdash; </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="stylesheet" type="text/css"
-    href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700">
-
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="css/jquery.timepicker.css">
-  <link rel="stylesheet" href="css/fancybox.min.css">
-
-  <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
-
-  <!-- Theme Style -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>White Houseinn &mdash; </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <!-- Falcon Icon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+  
+    <link rel="stylesheet" type="text/css"
+      href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700">
+  
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+  
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+  
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  
 
 <body data-spy="scroll" data-target="#templateux-navbar" data-offset="200">
 
   <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="templateux-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><span class="text-danger">White</span>HouseInn</a>
-      <div class="site-menu-toggle js-site-menu-toggle  ml-auto" data-aos="fade" data-toggle="collapse"
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="Logo" style="height: 35px; width: auto; margin-right: 8px;"> 
+        <span class="text-danger font-weight-bold" style="font-size: 1.2rem;">White</span>HouseInn
+      </a>
+      
+      <div class="site-menu-toggle js-site-menu-toggle ml-auto" data-aos="fade" data-toggle="collapse"
         data-target="#templateux-navbar-nav" aria-controls="templateux-navbar-nav" aria-expanded="false"
         aria-label="Toggle navigation">
         <span></span>
@@ -38,7 +45,7 @@
         <span></span>
       </div>
       <!-- END menu-toggle -->
-
+  
       <div class="collapse navbar-collapse" id="templateux-navbar-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
@@ -48,8 +55,6 @@
           <li class="nav-item"><a class="nav-link" href="#section-contact">Contact</a></li>
           <li class="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0">
             <a class="nav-link" href="tel:+918111810200">
-
-
               <span class="pb_rounded-4 px-4 rounded">Book Now</span>
             </a>
           </li>
@@ -57,6 +62,7 @@
       </div>
     </div>
   </nav>
+  
   <!-- END nav -->
 
   <section class="site-hero overlay"
@@ -102,88 +108,120 @@
   </style>
 
   <!-- END section -->
-  <!-- Booking Section -->
-  <section class="section bg-light pb-0">
-    <div class="container">
-      <div class="row check-availabilty" id="next">
-        <div class="block-32" data-aos="fade-up" data-aos-offset="-200">
-          <form method="POST" action="https://api.web3forms.com/submit" id="availabilityForm"
-            onsubmit="return validateForm();">
-            <!-- Web3Forms Access Key -->
-            <input type="hidden" name="access_key" value="042c458b-3bbb-47ce-bf96-957da41aba21">
-            <!-- Redirect URL -->
-            <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you"> -->
 
-            <div class="row align-items-end">
-              <!-- Check-In Date -->
-              <div class="col-md-3 mb-3">
-                <label for="checkin_date" class="font-weight-bold text-black">Check In Date</label>
-                <div class="field-icon-wrap">
-                  <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkin_date" name="checkin_date" class="form-control" placeholder="YYYY-MM-DD"
-                    required onchange="updateCheckoutDate()" oninput="storeCheckinDate()" />
-                </div>
+ <!-- Booking Section -->
+<section class="section bg-light pb-0">
+  <div class="container">
+    <div class="row check-availabilty" id="next">
+      <div class="block-32" data-aos="fade-up" data-aos-offset="-200">
+        <form method="POST" action="https://api.web3forms.com/submit" id="availabilityForm" onsubmit="return validateForm();">
+          <!-- Web3Forms Access Key -->
+          <input type="hidden" name="access_key" value="042c458b-3bbb-47ce-bf96-957da41aba21">
+          <!-- Redirect URL -->
+          <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you"> -->
+
+          <div class="row align-items-end">
+            <!-- Mobile Number -->
+            <div class="col-md-2 mb-2">
+              <label for="mobile_number" class="font-weight-bold text-black">Mobile Number</label>
+              <div class="field-icon-wrap">
+                <div class="icon"><span class="icon-phone"></span></div>
+                <input
+                  type="tel"
+                  id="mobile_number"
+                  name="mobile_number"
+                  class="form-control"
+                  placeholder="Mobile Number ."
+                  required
+                  pattern="[0-9]{10,15}"
+                  title="Please enter a valid mobile number (10-15 digits)."
+                />
               </div>
-
-              <!-- Check-Out Date -->
-              <div class="col-md-3 mb-3">
-                <label for="checkout_date" class="font-weight-bold text-black">Check Out Date</label>
-                <div class="field-icon-wrap">
-                  <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkout_date" name="checkout_date" class="form-control"
-                    placeholder="YYYY-MM-DD" required />
-                </div>
-              </div>
-
-              <!-- Adults -->
-              <div class="col-md-2 col-lg-2 mb-3">
-                <label for="adults" class="font-weight-bold text-black">Adults</label>
-                <div class="field-icon-wrap">
-                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                  <select name="adults" id="adults" class="form-control" required>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4+">4+</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- Children -->
-              <div class="col-md-2 col-lg-2 mb-3">
-                <label for="children" class="font-weight-bold text-black">Children</label>
-                <div class="field-icon-wrap">
-                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                  <select name="children" id="children" class="form-control" required>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4+">4+</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- Submit Button -->
-             <div class="col-md-2 col-lg-2 mb-3">
-  <button
-    type="submit"
-    class="btn btn-primary btn-block text-white"
-    id="submitBtn"
-    style="border-radius: 4px;"
-     
-  >
-  Reserve Now
-  </button>
-</div>
-
             </div>
-          </form>
-        </div>
+
+            <!-- Check-In Date -->
+            <div class="col-md-2 mb-2">
+              <label for="checkin_date" class="font-weight-bold text-black">Check In Date</label>
+              <div class="field-icon-wrap">
+                <div class="icon"><span class="icon-calendar"></span></div>
+                <input
+                  type="text"
+                  id="checkin_date"
+                  name="checkin_date"
+                  class="form-control"
+                  placeholder="YYYY-MM-DD"
+                  required
+                  onchange="updateCheckoutDate()"
+                  oninput="storeCheckinDate()"
+                />
+              </div>
+            </div>
+
+            <!-- Check-Out Date -->
+            <div class="col-md-2 mb-2">
+              <label for="checkout_date" class="font-weight-bold text-black">Check Out Date</label>
+              <div class="field-icon-wrap">
+                <div class="icon"><span class="icon-calendar"></span></div>
+                <input
+                  type="text"
+                  id="checkout_date"
+                  name="checkout_date"
+                  class="form-control"
+                  placeholder="YYYY-MM-DD"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Adults -->
+            <div class="col-md-2 col-lg-2 mb-2">
+              <label for="adults" class="font-weight-bold text-black">Adults</label>
+              <div class="field-icon-wrap">
+                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                <select name="adults" id="adults" class="form-control" required>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4+">4+</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Children -->
+            <div class="col-md-2 col-lg-2 mb-2">
+              <label for="children" class="font-weight-bold text-black">Children</label>
+              <div class="field-icon-wrap">
+                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                <select name="children" id="children" class="form-control" required>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4+">4+</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-md-2 col-lg-2 mb-2">
+              <button
+                type="submit"
+                class="btn btn-primary btn-block text-white"
+                id="submitBtn"
+                style="border-radius: 4px;"
+              >
+                Reserve Now
+              </button>
+            </div>
+
+          </div>
+        </form>
       </div>
     </div>
-  </section>
-  <!-- Booking Section end -->
+  </div>
+</section>
+<!-- Booking Section end -->
+
 
 
 

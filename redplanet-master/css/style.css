@@ -367,6 +367,13 @@ textarea.form-control {
     left: 30px !important; }
   .owl-carousel .owl-nav .owl-next {
     right: 30px !important; }
+    .slider-item img {
+      max-width: 80%; /* Adjust percentage as needed */
+      max-height: 600px; /* Set a maximum height for the images */
+      object-fit: cover; /* Ensures the image retains its proportions and fills the space */
+      margin: 0 auto; /* Center the images */
+    }
+    
 
 .owl-carousel .owl-dots {
   text-align: center; }

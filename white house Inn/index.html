@@ -1,0 +1,681 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>White Houseinn &mdash; </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Falcon Icon -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link rel="stylesheet" href="css/fancybox.min.css">
+
+  <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body data-spy="scroll" data-target="#templateux-navbar" data-offset="200">
+
+  <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="templateux-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="Logo" style="height: 35px; width: auto; margin-right: 8px;">
+        <span class="text-danger font-weight-bold" style="font-size: 1.2rem;">White</span>HouseInn
+      </a>
+
+      <div class="site-menu-toggle js-site-menu-toggle ml-auto" data-aos="fade" data-toggle="collapse"
+        data-target="#templateux-navbar-nav" aria-controls="templateux-navbar-nav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- END menu-toggle -->
+
+      <div class="collapse navbar-collapse" id="templateux-navbar-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#section-about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#section-team">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#section-rooms">Rooms</a></li>
+          <li class="nav-item"><a class="nav-link" href="#section-contact">Contact</a></li>
+          <li class="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0">
+            <a class="nav-link" href="tel:+918111810200">
+              <span class="pb_rounded-4 px-4 rounded">Book Now</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- END nav -->
+
+  <section class="site-hero overlay"
+    style="background-image: url(images/wallpaperflare.com_wallpaper.jpg); background-size: cover;"
+    data-stellar-background-ratio="0.5" id="section-home">
+    <div class="container">
+      <div class="row site-hero-inner justify-content-center align-items-center">
+        <div class="col-md-10 text-center" data-aos="fade-up">
+          <h2 class="heading zoom-animation">Stay at White HouseInn - Your Gateway to Relaxation</h2>
+        </div>
+      </div>
+    </div>
+
+    <a class="mouse smoothscroll" href="#next">
+      <div class="mouse-icon">
+        <span class="mouse-wheel"></span>
+      </div>
+    </a>
+  </section>
+
+  <!-- CSS for Zoom Animation -->
+  <style>
+    .zoom-animation {
+      animation: zoomIn 2s ease-in-out;
+    }
+
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <!-- END section -->
+
+  <!-- Booking Section -->
+  <section class="section bg-light pb-0">
+    <div class="container">
+      <div class="row check-availabilty" id="next">
+        <div class="block-32" data-aos="fade-up" data-aos-offset="-200">
+          <form method="POST" action="https://api.web3forms.com/submit" id="availabilityForm"
+            onsubmit="return validateForm();">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="042c458b-3bbb-47ce-bf96-957da41aba21">
+            <!-- Redirect URL -->
+            <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you"> -->
+
+            <div class="row align-items-end">
+              <!-- Mobile Number -->
+              <div class="col-md-2 mb-2">
+                <label for="mobile_number" class="font-weight-bold text-black">Mobile Number</label>
+                <div class="field-icon-wrap">
+                  <div class="icon"><span class="icon-phone"></span></div>
+                  <input type="tel" id="mobile_number" name="mobile_number" class="form-control"
+                    placeholder="Mobile Number ." required pattern="[0-9]{10,15}"
+                    title="Please enter a valid mobile number (10-15 digits)." />
+                </div>
+              </div>
+
+              <!-- Check-In Date -->
+              <div class="col-md-2 mb-2">
+                <label for="checkin_date" class="font-weight-bold text-black">Check In Date</label>
+                <div class="field-icon-wrap">
+                  <div class="icon"><span class="icon-calendar"></span></div>
+                  <input type="text" id="checkin_date" name="checkin_date" class="form-control" placeholder="YYYY-MM-DD"
+                    required onchange="updateCheckoutDate()" oninput="storeCheckinDate()" />
+                </div>
+              </div>
+
+              <!-- Check-Out Date -->
+              <div class="col-md-2 mb-2">
+                <label for="checkout_date" class="font-weight-bold text-black">Check Out Date</label>
+                <div class="field-icon-wrap">
+                  <div class="icon"><span class="icon-calendar"></span></div>
+                  <input type="text" id="checkout_date" name="checkout_date" class="form-control"
+                    placeholder="YYYY-MM-DD" required />
+                </div>
+              </div>
+
+              <!-- Adults -->
+              <div class="col-md-2 col-lg-2 mb-2">
+                <label for="adults" class="font-weight-bold text-black">Adults</label>
+                <div class="field-icon-wrap">
+                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                  <select name="adults" id="adults" class="form-control" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4+">4+</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Children -->
+              <div class="col-md-2 col-lg-2 mb-2">
+                <label for="children" class="font-weight-bold text-black">Children</label>
+                <div class="field-icon-wrap">
+                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                  <select name="children" id="children" class="form-control" required>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4+">4+</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="col-md-2 col-lg-2 mb-2">
+                <button type="submit" class="btn btn-primary btn-block text-white" id="submitBtn"
+                  style="border-radius: 4px;">
+                  Reserve Now
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Booking Section end -->
+
+
+
+
+
+
+  <section class="py-5 bg-light" id="section-about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5" data-aos="fade-up">
+          <img src="images/about.jpg" alt="WhitehouseInn Hotel" class="img-fluid rounded">
+        </div>
+        <div class="col-md-12 col-lg-4 order-lg-1" data-aos="fade-up">
+          <h2 class="heading mb-4">About !</h2>
+          <p class="mb-5">Nestled in the heart of Lexlyary, the WhitehouseInn Hotel offers a perfect blend of luxury and
+            comfort.
+            From its stunning architecture to its world-class amenities, every corner of our hotel is designed to make
+            your stay unforgettable.
+            Whether you're here to relax or explore, we are your ultimate home away from home.</p>
+          <p><a href="https://youtube.com/shorts/CNiOYkjkHp4?si=KEdqCcHqXdvfrUc6" data-fancybox
+              class="btn btn-primary text-white py-2 mr-3 text-uppercase letter-spacing-1">Watch the video</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section" id="section-rooms"
+    style="background: url('images/round.png') no-repeat center center; background-size: cover;">
+    <div class="container">
+
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade-up">Rooms &amp; Suites</h2>
+          <p data-aos="fade-up" data-aos-delay="100">
+            Discover a tranquil retreat where comfort meets elegance. Nestled away from the hustle and bustle, our rooms
+            and suites offer a perfect sanctuary. Experience serenity at its best, surrounded by breathtaking views and
+            modern amenities.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <a href="#" class="room">
+              <figure class="img-wrap">
+                <img src="images/classic room.jpg" alt="Free website template" class="img-fluid mb-3">
+              </figure>
+              <div class="p-3 text-center room-info">
+                <h2>Classic Room</h2>
+                <span class="text-uppercase letter-spacing-1"></span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <a href="#" class="room">
+              <figure class="img-wrap">
+                <img src="images/with balcony.jpg" alt="Free website template" class="img-fluid mb-3">
+              </figure>
+              <div class="p-3 text-center room-info">
+                <h2>Deluxe with balcony</h2>
+                <span class="text-uppercase letter-spacing-1"></span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <a href="#" class="room">
+              <figure class="img-wrap">
+                <img src="images/family with balcony.jpg" alt="Free website template" class="img-fluid mb-3">
+              </figure>
+              <div class="p-3 text-center room-info">
+                <h2>Family suite with balcony</h2>
+                <span class="text-uppercase letter-spacing-1"></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section slider-section bg-light">
+    
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-8">
+          <h2 class="heading" data-aos="fade-up">Our Photo Gallery</h2>
+          <p data-aos="fade-up" data-aos-delay="100">
+            Discover the charm of WhitehouseInn through our carefully curated gallery.
+            From exquisite interiors to breathtaking outdoor spaces, each photo captures the essence of luxury and
+            comfort.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="home-slider major-caousel owl-carousel mb-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="slider-item">
+              <a href="images/Whitehouse1.jpg" data-fancybox="images" data-caption="Caption for this image"><img
+                  src="images/Whitehouse1.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="images/Whitehouse2.jpg" data-fancybox="images" data-caption="Caption for this image"><img
+                  src="images/Whitehouse2.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="images/Whitehouse3.jpg" data-fancybox="images" data-caption="Caption for this image"><img
+                  src="images/Whitehouse3.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="images/Whitehouse4.jpg" data-fancybox="images" data-caption="Caption for this image"><img
+                  src="images/Whitehouse4.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="images/Whitehouse5.jpg" data-fancybox="images" data-caption="Caption for this image"><img
+                  src="images/Whitehouse5.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="images/Whitehouse6.jpg" data-fancybox="images" data-caption="Caption for this image"><img
+                  src="images/Whitehouse6.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="images/Whitehouse7.jpg" data-fancybox="images" data-caption="Caption for this image"><img
+                  src="images/Whitehouse7.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="images/Whitehouse8.jpg" data-fancybox="images" data-caption="Caption for this image"><img
+                  src="images/Whitehouse8.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+          </div>
+          <!-- END slider -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END section -->
+
+
+
+  <!-- END section -->
+  <section class="section testimonial-section" style="background: url('images/round.png') no-repeat center center; background-size: cover;">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade-up">People Says</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="js-carousel-2 owl-carousel mb-5" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="images/profile1.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;White House Inn offers unmatched hospitality, cozy ambiance, and delightful cuisine—a truly unforgettable experience for every guest!&rdquo;</p>
+            </blockquote>
+            <p><em>&mdash; Naushad jk</em></p>
+          </div>
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="images/profile2.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo; Exceptional service, luxurious comfort, and warm hospitality make White House Inn the perfect choice for a memorable stay.&rdquo;</p>
+            </blockquote>
+            <p><em>&mdash; Ameen cr</em></p>
+          </div>
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="images/profile3.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;A serene retreat with beautiful rooms, excellent amenities, and outstanding staff—White House Inn exceeds every expectation!&rdquo;</p>
+            </blockquote>
+            <p><em>&mdash; Mohan v</em></p>
+          </div>
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="images/profile4.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;White House Inn combines elegance, comfort, and exceptional service for an unparalleled guest experience.&rdquo;</p>
+            </blockquote>
+            <p><em>&mdash; Roshan </em></p>
+          </div>
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="images/profile5.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;Every moment at White House Inn feels special, thanks to their incredible staff and top-notch facilities&rdquo;</p>
+            </blockquote>
+            <p><em>&mdash; Shakir </em></p>
+          </div>
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="images/profile6.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;Relaxation and luxury meet at White House Inn, where every guest is treated like royalty!&rdquo;</p>
+            </blockquote>
+            <p><em>&mdash; Rinshad </em></p>
+          </div>
+
+        </div>
+        <!-- END slider -->
+      </div>
+    </div>
+</section>
+
+
+
+
+  <section class="section contact-section" id="section-contact">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade-up">Contact Us</h2>
+          <p data-aos="fade-up">We'd love to hear from you! Whether you have questions, feedback, or just want to say
+            hello, feel free to reach out to us. Our team is here to assist you.</p>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Contact Form -->
+        <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+          <form method="post" action="https://api.web3forms.com/submit"
+            class="bg-white p-md-5 p-4 mb-5 border rounded shadow">
+            <!-- Web3Forms API Key -->
+            <input type="hidden" name="access_key" value="042c458b-3bbb-47ce-bf96-957da41aba21">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Enter your phone number"
+                  required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email"
+                  required>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-12 form-group">
+                <label for="message">Your Message</label>
+                <textarea name="message" id="message" class="form-control" placeholder="Write your message here"
+                  cols="30" rows="6" required></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group text-center">
+                <input type="submit" value="Send Message" class="btn btn-primary text-white px-4 py-2 font-weight-bold">
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+        <!-- Contact Information -->
+        <div class="col-md-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="row">
+            <div class="col-md-10 ml-auto contact-info">
+              <div class="mb-4">
+                <h3>Contact Details</h3>
+                <p class="mb-2"><strong>Address:</strong> National Public School Road, Karukappilly Desabhimani, Kaloor,
+                  Kochi, Kerala -682 017</p>
+                <p class="mb-2"><strong>Phone:</strong> <a href="tel:+918111810200" class="text-black">+91
+                    8111810200</a></p>
+                <p class="mb-2"><strong>Phone:</strong> <a href="tel:+914843159047" class="text-black">+91
+                    4843159047</a></p>
+                <p><strong>Email:</strong> <a href="mailto:Whitehouseinn.cochin@gmail.com"
+                    class="text-black">Whitehouseinn.cochin@gmail.com</a></p>
+              </div>
+              <div>
+                <p>
+                  <a href="#" class="mr-3"><i class="icon-facebook"></i></a>
+                  <a href="#" class="mr-3"><i class="icon-twitter"></i></a>
+                  <a href="#" class="mr-3"><i class="icon-instagram"></i></a>
+                  <a href="#"><i class="icon-linkedin"></i></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <footer class="section footer-section">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-3 mb-5">
+          <ul class="list-unstyled link">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Rooms</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-5">
+          <ul class="list-unstyled link">
+            <li><a href="#">The Rooms &amp; Suites</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Restaurant</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-5 pr-md-5 contact-info">
+          <!-- <li>198 West 21th Street, <br> Suite 721 New York NY 10016</li> -->
+          <p><span class="d-block"><span class="ion-ios-location h5 mr-3 text-primary"></span>Address:</span> <span>
+              National Public School Road, Karukappilly Desabhimani, Kaloor,
+              Kochi, Kerala -682 017 <br> </span></p>
+          <p><span class="d-block"><span class="ion-ios-telephone h5 mr-3 text-primary"></span>Phone:</span> <span>
+              (+91) 8111810200</span></p>
+          <p><span class="d-block"><span class="ion-ios-email h5 mr-3 text-primary"></span>Email:</span> <span>
+              Whitehouseinn.cochin@gmail.com</span></p>
+        </div>
+        <div class="col-md-3 mb-5">
+          <p>Sign up for our newsletter</p>
+          <form action="#" class="footer-newsletter">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email...">
+              <button type="submit" class="btn"><span class="fa fa-paper-plane"></span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row pt-5">
+        <p class="col-md-8 text-left">
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;
+          <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+            class="fa fa-heart text-primary" aria-hidden="true"></i> by <a href="" target="_blank">Zyn_Abi</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
+
+        <p class="col-md-4 text-right social">
+          <a href="#"><span class="fa fa-facebook"></span></a>
+          <a href="#"><span class="fa fa-twitter"></span></a>
+          <a href="#"><span class="fa fa-linkedin"></span></a>
+          <a href="#"><span class="fa fa-instagram"></span></a>
+          <a href="#"><span class="fa fa-whatsapp"></span></a>
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Modal -->
+  <div class="modal fade " id="reservation-form" tabindex="-1" role="dialog" aria-labelledby="reservationFormTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+
+              <form action="index.html" method="post" class="bg-white p-4">
+                <div class="row mb-4">
+                  <div class="col-12">
+                    <h2>Reservation</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label class="text-black font-weight-bold" for="name">Name</label>
+                    <input type="text" id="name" class="form-control ">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label class="text-black font-weight-bold" for="phone">Phone</label>
+                    <input type="text" id="phone" class="form-control ">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <label class="text-black font-weight-bold" for="email">Email</label>
+                    <input type="email" id="email" class="form-control ">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label class="text-black font-weight-bold" for="checkin_date">Date Check In</label>
+                    <input type="text" id="checkin_date" class="form-control">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label class="text-black font-weight-bold" for="checkout_date">Date Check Out</label>
+                    <input type="text" id="checkout_date" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for="adults" class="font-weight-bold text-black">Adults</label>
+                    <div class="field-icon-wrap">
+                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                      <select name="" id="adults" class="form-control">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4+</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="children" class="font-weight-bold text-black">Children</label>
+                    <div class="field-icon-wrap">
+                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                      <select name="" id="children" class="form-control">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4+</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-md-12 form-group">
+                    <label class="text-black font-weight-bold" for="message">Notes</label>
+                    <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="submit" value="Reserve Now"
+                      class="btn btn-primary text-white py-3 px-5 font-weight-bold">
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+
+
+
+  <script src="js/aos.js"></script>
+
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
